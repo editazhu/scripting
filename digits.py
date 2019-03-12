@@ -2,7 +2,8 @@
 A simple numbers calculator.
 """
 
-print('Staring a calculator, enter everything except numbers to quit.')
+print('Staring calculator:'
+print('(Enter everything except numbers to quit.)')
 sum = 0
 digits = []
 
