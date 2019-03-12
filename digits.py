@@ -2,9 +2,8 @@
 A simple numbers calculator.
 """
 
-print('Staring calculator:'
+print('Staring calculator ...')
 print('(Enter everything except numbers to quit.)')
-sum = 0
 digits = []
 
 def calc():
@@ -18,8 +17,7 @@ while True:
 	try:
 		number = int(user_input)
 		digits.append(number)
-		sum = calc()
-		print('Current sum is: ', sum)
+		print('Current sum is: ', calc())
 
 	except ValueError:
 		print("Error")
