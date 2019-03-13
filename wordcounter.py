@@ -18,7 +18,7 @@ class WC:
 		print(words_total, "words in total.")
 		
 		word_freq = list(set(word_list))
-		for word in word_list:
+		for word in word_freq:
 			print(word + ": " + str(word_list.count(word)) + "\n")
 if __name__ == '__main__':
 	file = WC(sys.argv[1])
