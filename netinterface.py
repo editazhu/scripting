@@ -2,6 +2,7 @@ import os
 import sys
 import sh
 import csv
+import re
 
 class NetInterfaces:
 
@@ -11,9 +12,12 @@ class NetInterfaces:
 		pass
 	def read_write():
 		with open("interfaces", 'r') as f_in:
+			net_info = f_in.readlines()
 			with open('inet_status.csv','w') as f_out:
-				net_info = f_in.readlines()
-				f_out.writelines(net_info)
+				pattern = re.compile(r'[a-z0-9]+')
+				for line in net_info:
+					match = re.match(pattern, line)
+					print(match)
 			f_out.close()
 		f_in.close()
 		
