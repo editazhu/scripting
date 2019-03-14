@@ -12,9 +12,10 @@ class NetInterfaces:
 	def read_write():
 		with open("interfaces", 'r') as f_in:
 			with open('inet_status.csv','w') as f_out:
-				net_info = f_in.readline()
-				f_out.write(net_info)
-		#f_out.close()
+				net_info = f_in.readlines()
+				f_out.writelines(net_info)
+			f_out.close()
+		f_in.close()
 		
 if __name__ == '__main__':
 	NetInterfaces.read_write()
