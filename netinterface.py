@@ -15,9 +15,14 @@ class NetInterfaces:
 			net_info = f_in.readlines()
 			with open('inet_status.csv','w') as f_out:
 				pattern = re.compile(r'[a-z0-9]+')
+				inet = set() 
 				for line in net_info:
 					match = re.match(pattern, line)
 					print(match)
+					#return re.match object, how to save result?
+					#writer = csv.writer(f_out, 'wb')
+					#inet.add(writer)
+					#writer.writerow(match[1])
 			f_out.close()
 		f_in.close()
 		
